@@ -6,10 +6,10 @@ const Countries = () => {
     const [data, setData] = useState([]);
     const [sortedData, setSortedData] = useState([]);
     const [playOnce, setPlayOnce] = useState(true);
+    const [rangeValue, setRangeValue] = useState(40);
 
     useEffect(() => {
         if (playOnce) {
-            console.log('call axios');
             axios.get('https://restcountries.eu/rest/v2/all?fields=alpha3Code;name;population;region;region;capital;flag')
             .then(res => setData(res.data));
             setPlayOnce(false);
@@ -20,17 +20,18 @@ const Countries = () => {
             const sortedArray = countryObj.sort((a,b) => {
                 return b.population - a.population
             });
-            sortedArray.length = 30;
+            sortedArray.length = rangeValue;
             setSortedData(sortedArray);
         }
 
-        console.log('sortCountries()');
         sortCountries();
-
-    }, [data, playOnce]);
+    }, [data, rangeValue, playOnce]);
     
     return (
         <div className="countries">
+            <div className="sort-container">
+                <input type="range" min="1" max="250" value={rangeValue} onChange={(e) => setRangeValue(e.target.value)}/>
+            </div>
             <ul className="countries-list">
                 {sortedData.map((country) => (
                     <Card key={country.alpha3Code} country={country}/>
