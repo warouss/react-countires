@@ -11,6 +11,13 @@
 
 ### `npm i -s react-dom react-router-dom node-sass@4.14.1`
 
+### Installer l'extension Chrome `React Developer Tools`
+
+### Installer Axios
+### `npm i -s axios`
+
+### lien API : 
+### `https://restcountries.eu/rest/v2/all?fields=name;population;region;region;capital;flag`
 
 
 # Getting Started with Create React App
