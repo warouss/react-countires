@@ -1,3 +1,18 @@
+# React Countries Project
+
+## Initialisation du projet
+
+### Suppression des fichiers et code inutils.
+
+### Téléchargement des bibliothèques utilies de React :
+* react-dom
+* react-router-dom
+* node-saas (version 4.14.1 car la version 5 buge)
+
+### `npm i -s react-dom react-router-dom node-sass@4.14.1`
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
